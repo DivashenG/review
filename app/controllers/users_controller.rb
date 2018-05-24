@@ -4,14 +4,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
-      flash[:notice] = 'You signed up successfully'
-      flash[:color] = 'valid'
+      redirect_to root_path, alert: 'You signed up successfully'
     else
-      flash[:notice] = 'Unsuccessful'
-      flash[:color] = 'invalid'
+      redirect_to root_path, alert: 'Error, sign up unsuccessful'
     end
-    render "new"
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit!
   end
 end
