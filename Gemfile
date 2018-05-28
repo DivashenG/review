@@ -28,6 +28,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt', :require => 'bcrypt'
 
+# Bootstrap integration
+gem 'bootstrap-sass'
+# Adds the proper vendor prefixes to your CSS code
+gem 'autoprefixer-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
